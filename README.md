@@ -9,7 +9,7 @@ Details
 
 - Recommend running web browser private mode.(because cache data)
 
-- This project is not perfect but pretty useful. if you have a courage develop it!
+- This project is not perfect but pretty useful. If you have a courage develop it!
 
 Run & Address
 ------
