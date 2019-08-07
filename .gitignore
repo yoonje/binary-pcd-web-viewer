@@ -125,3 +125,7 @@ dmypy.json
 
 # pycharm
 .idea/
+
+# data
+static/data/
+
