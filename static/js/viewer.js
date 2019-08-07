@@ -16,7 +16,11 @@ function viewer(container, options) {
 	var roll = options.roll || 0.0;
 	var pitch = options.pitch || 0.0;
 	var yaw = options.yaw || 0.0;
-	var pointSize = options.pointSize || 0.3;
+	var pointSize = options.pointSize || 0.45;
+	var scene = null;
+	var renderer = null;
+	var camera = null;
+	var left = null;
 
 	// Build a color from a scalar value
 	function buildColor(v) {
@@ -28,12 +32,8 @@ function viewer(container, options) {
 		return new THREE.Color(r, g, b);
 	}
 
-	var scene = null;
-	var renderer = null;
-	var camera = null;
-
 	// Draw the progressbar on the middle
-	var left = Math.round( (window.innerWidth - 400)/2 );
+	left = Math.round( (window.innerWidth - 400)/2 );
 	$("#progressbar-container").css("left",left + "px");
 
 	// Scene
@@ -41,7 +41,7 @@ function viewer(container, options) {
 	scene.fog = new THREE.FogExp2(0x000000, 0.0009);
 
 	// Camera
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100000);
+	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200000);
 
 	// Detect webgl support
 	if (!Detector.webgl) {
@@ -52,7 +52,6 @@ function viewer(container, options) {
 
 	// The renderer
 	renderer = new THREE.WebGLRenderer();
-	console.log(window.innerHeight);
 	renderer.setSize(window.innerWidth,window.innerHeight -4);
 
 	// Render the scene
@@ -67,10 +66,9 @@ function viewer(container, options) {
 	controls.panSpeed = 0.8;
 	controls.enableDamping = true;
 	controls.dampingFactor = 0.3;
-	controls.keys = [65, 17, 18];
 	controls.addEventListener('change', render);
 
-	var geometry = new THREE.SphereGeometry( 1, 32, 32 );
+	var geometry = new THREE.SphereGeometry( 4, 32, 32 );
 	var material = new THREE.MeshBasicMaterial({
 		color: 0xffff00,
 		transparent: true,
@@ -79,8 +77,6 @@ function viewer(container, options) {
 	controls.visualizer = new THREE.Mesh( geometry, material );
 	controls.visualizer.visible = false;
 	scene.add( controls.visualizer );
-
-
 
 	// Render loop
 	function animate() {
@@ -92,7 +88,7 @@ function viewer(container, options) {
 	var geometry = new THREE.Geometry();
 	var material = new THREE.PointsMaterial({size:pointSize, vertexColors:true});
 	var pointcloud = new THREE.Points(geometry, material);
-	console.log(pointcloud.material.size);
+
 	scene.add(pointcloud);
 
 	// Add the canvas, render and animate
@@ -239,7 +235,6 @@ function viewer(container, options) {
 			}
 
 			bufferSize = geometry.vertices.length;
-
 			var avg = geometry.vertices.reduce(function(acc, cur) {
 				return {
 					x: acc.x + cur.x,
@@ -252,14 +247,12 @@ function viewer(container, options) {
 				y: avg.y / geometry.vertices.length,
 				z: avg.z / geometry.vertices.length,
 			};
-			console.log(geometry);
-			console.log(avg);
 
-			// camera.lookAt(new THREE.Vector3(avg.x, avg.y, avg.z));
-			// controls.target.set(-100, 0, 0);
-			// camera.position.x = avg.x;
-			// camera.position.y = avg.y;
-			camera.position.z = 350;
+			// linear moving input proper value
+			camera.position.z = 450
+			camera.position.x = -150
+			camera.position.y = -100
+			controls.target.set(-150, -100, 0);
 
 			render();
 		},
@@ -275,6 +268,6 @@ function viewer(container, options) {
 		}
 	);
 
-	// render();
+	render();
 	animate();
 }

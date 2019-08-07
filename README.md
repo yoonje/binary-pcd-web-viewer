@@ -7,7 +7,9 @@ Details
 ------
 - Put your .pcd file in static/data/ directory.
 
-- Run web browser private mode
+- Have to run web browser private mode
+
+- 
 ##Run
 
 python3 manage.py runserver or ./manage.py runserver
