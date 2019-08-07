@@ -16,7 +16,7 @@ function viewer(container, options) {
 	var roll = options.roll || 0.0;
 	var pitch = options.pitch || 0.0;
 	var yaw = options.yaw || 0.0;
-	var pointSize = options.pointSize || 0.2;
+	var pointSize = options.pointSize || 0.3;
 
 	// Build a color from a scalar value
 	function buildColor(v) {
@@ -42,8 +42,6 @@ function viewer(container, options) {
 
 	// Camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100000);
-	// camera.position.z = 180;
-	// camera.up = new THREE.Vector3(0,0,1);
 
 	// Detect webgl support
 	if (!Detector.webgl) {
@@ -241,6 +239,7 @@ function viewer(container, options) {
 			}
 
 			bufferSize = geometry.vertices.length;
+
 			var avg = geometry.vertices.reduce(function(acc, cur) {
 				return {
 					x: acc.x + cur.x,
@@ -255,11 +254,12 @@ function viewer(container, options) {
 			};
 			console.log(geometry);
 			console.log(avg);
+
 			// camera.lookAt(new THREE.Vector3(avg.x, avg.y, avg.z));
-			controls.target.set( avg.x, avg.y, avg.z);
+			// controls.target.set(-100, 0, 0);
 			// camera.position.x = avg.x;
 			// camera.position.y = avg.y;
-			// camera.position.z = avg.z;
+			camera.position.z = 350;
 
 			render();
 		},

@@ -5,8 +5,9 @@ Django 2.2.0 over
 
 Details
 ------
-Put your .pcd file in static/data directory.
+- Put your .pcd file in static/data/ directory.
 
+- Run web browser private mode
 ##Run
 
 python3 manage.py runserver or ./manage.py runserver
