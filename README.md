@@ -3,6 +3,7 @@ Settings
 Python 3.5.2 over<br>
 Django 2.2.0 over 
 
+
 Details
 ------
 - Put your .pcd file in "static/data/" directory.
@@ -10,6 +11,9 @@ Details
 - Recommend running web browser private mode.(because cache data)
 
 - This project is not perfect but pretty useful. If you have a courage develop it!
+
+- You can set your screen through camera.position[variables] and controls.target.set()[function]
+
 
 Run & Address
 ------
@@ -21,3 +25,5 @@ url : https://\<IP:port_number\>/?load=/static/data/<file_name>.pcd
 Original Project
 ------
 [xqms/pcd_web_viewer](https://github.com/xqms/pcd_web_viewer)
+
+Rewrite and remove not working component(rgb).

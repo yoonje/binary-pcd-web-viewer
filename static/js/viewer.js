@@ -61,9 +61,9 @@ function viewer(container, options) {
 
 	// Setup controls
 	var controls = new THREE.OrbitControls( camera );
-	controls.rotateSpeed = 1.0;
-	controls.zoomSpeed = 5.0;
-	controls.panSpeed = 0.8;
+	controls.rotateSpeed = 0.5;
+	controls.zoomSpeed = 2.0;
+	controls.panSpeed = 0.5;
 	controls.enableDamping = true;
 	controls.dampingFactor = 0.3;
 	controls.addEventListener('change', render);
@@ -108,15 +108,11 @@ function viewer(container, options) {
 			data: [],
 			valid: 0
 		},
-		rgb: {
-			data: [],
-			valid: 0
-		}
 	};
 
 	var cname = getUrlParameter('color');
 	if(cname == undefined)
-		cname = 'rgb';
+		cname = 'x';
 
 	function recomputeColorChannel(name, stats, numPoints) {
 		stats = stats[name];
@@ -201,13 +197,12 @@ function viewer(container, options) {
 	var euler = new THREE.Euler(roll, pitch, yaw, 'XYZ');
 	transform.makeRotationFromEuler(euler);
 
-	load(filename, transform, geometry.vertices, colors['rgb'].data,
+	load(filename, transform, geometry.vertices, colors['x'].data,
 		function(stats, numPoints) {
-			colors['rgb'].valid = numPoints;
+			colors['x'].valid = numPoints;
 			finalStats = stats;
 
-			if(cname !== 'rgb')
-				recomputeColorChannel(cname, stats, numPoints);
+			recomputeColorChannel(cname, stats, numPoints);
 
 			console.log('progress', numPoints);
 
@@ -235,23 +230,11 @@ function viewer(container, options) {
 			}
 
 			bufferSize = geometry.vertices.length;
-			var avg = geometry.vertices.reduce(function(acc, cur) {
-				return {
-					x: acc.x + cur.x,
-					y: acc.y + cur.y,
-					z: acc.z + cur.z,
-				};
-			}, {x: 0, y: 0, z: 0});
-			avg = {
-				x: avg.x / geometry.vertices.length,
-				y: avg.y / geometry.vertices.length,
-				z: avg.z / geometry.vertices.length,
-			};
 
-			// linear moving input proper value
-			camera.position.z = 450
+			// linear moving input proper value(x,y) <=> position`s x,y target`s x,y
 			camera.position.x = -150
 			camera.position.y = -100
+			camera.position.z = 450
 			controls.target.set(-150, -100, 0);
 
 			render();
@@ -261,7 +244,7 @@ function viewer(container, options) {
 			$("#progressbar-container").hide();
 			$("#controls-browser").show();
 
-			changeColor('x');
+			changeColor('y');
 			render();
 
 			document.addEventListener("keydown", onKeyDown, false);
