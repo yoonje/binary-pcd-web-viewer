@@ -12,8 +12,6 @@ Explanation
 
 - Recommend running web browser private mode.(because cache data)
 
-- This project is not perfect but pretty useful. If you have a courage develop it!
-
 - You can set your screen through camera.position(x,y,z) and controls.target.set()
 
 
