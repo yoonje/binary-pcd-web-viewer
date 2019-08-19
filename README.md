@@ -12,8 +12,6 @@ Explanation
 
 - Recommend running web browser private mode.(because cache data)
 
-- This project is not perfect but pretty useful. If you have a courage develop it!
-
 - You can set your screen through camera.position(x,y,z) and controls.target.set()
 
 
@@ -29,7 +27,7 @@ Address: url : https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd
 Result
 ------
 <img src="kcity.png" width="600" height="350">
-This image show Kcity(Korean Autonomous Vehicle Experiment City) pcd map.<br>
+This image show Kcity(Korean Autonomous Vehicle Experiment City) pcd map.<br><br>
 
 <img src="voxel.png" width="600" height="350">
 This image show fragment pcd file in Kcity.
