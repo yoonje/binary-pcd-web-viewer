@@ -20,7 +20,6 @@ function viewer(container, options) {
 	var scene = null;
 	var renderer = null;
 	var camera = null;
-	var left = null;
 
 	// Build a color from a scalar value
 	function buildColor(v) {
