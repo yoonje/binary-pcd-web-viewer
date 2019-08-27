@@ -27,7 +27,7 @@ Address: url : https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd
 Result
 ------
 <img src="kcity.png" width="600" height="350">
-This image show Kcity(Korean Autonomous Vehicle Experiment City) pcd map.<br><br>
+This image show Kcity(South Korea Autonomous Vehicle Experiment City) pcd map.<br><br>
 
 <img src="voxel.png" width="600" height="350">
 This image show fragment pcd file in Kcity.
