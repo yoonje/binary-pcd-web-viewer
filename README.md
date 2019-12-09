@@ -32,9 +32,3 @@ This image show Kcity(South Korea Autonomous Vehicle Experiment City) pcd map.<b
 <img src="voxel.png" width="100%" height="55%">
 This image show fragment pcd file in Kcity.
  
- 
-Original Project and Reference
-------
-[xqms/pcd_web_viewer](https://github.com/xqms/pcd_web_viewer)<br>
-[Three.js/pcdloader](https://threejs.org/docs/#examples/en/loaders/PCDLoader)<br>
-Add camera and subject setting code and remove not working component(rgb, vector value).
