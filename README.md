@@ -7,7 +7,7 @@ Explanation
 
 Run & Address
 ------
-url : `https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd`
+`url : https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd`
 
 
 Result
