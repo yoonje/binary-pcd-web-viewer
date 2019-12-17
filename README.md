@@ -1,27 +1,13 @@
-Settings
-------
-Python 3.5.2 over<br>
-Django 2.2.0 over 
-
-
 Explanation
 ------
 - Put your .pcd file in "static/data/" directory.
-
-- You can choose web framework. I used django.
-
+- You can choose web framework. I used Django.
 - Recommend running web browser private mode.(because cache data)
-
 - You can set your screen through camera.position(x,y,z) and controls.target.set()
 
-
-Install & Run & Address
+Run & Address
 ------
-Install: sudo pip3 install django
-
-Run: python3 manage.py runserver or ./manage.py runserver
-
-Address: url : https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd
+url : `https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd`
 
 
 Result
