@@ -1,6 +1,5 @@
-Binary pcd viewer
-------
-.pdf file(pointcloud data format) web viwer.
+# Binary pcd viewer
+.pcd file(pointcloud data format) web viwer.
 
 Explanation
 ------
