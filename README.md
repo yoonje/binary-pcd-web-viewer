@@ -1,3 +1,7 @@
+Binary pcd viewer
+------
+.pdf file(pointcloud data format) web viwer.
+
 Explanation
 ------
 - Put your .pcd file in "static/data/" directory.
