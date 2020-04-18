@@ -1,4 +1,4 @@
-# Binary pcd viewer
+# Binary PCD Web Viewer
 .pcd file(pointcloud data format) web viwer.
 
 ### Explanation
