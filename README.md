@@ -8,7 +8,7 @@
 - You can set your screen through `camera.position(x,y,z)` and `controls.target.set()`
 
 ### Run
-`url : https://\<IP:port_number\>/?load=/static/data/<\file_name\>.pcd`
+`url : https://<IP:port_number>/?load=/static/data/<file_name>.pcd`
 
 
 ### Action
