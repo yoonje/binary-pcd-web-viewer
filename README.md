@@ -4,7 +4,7 @@
 ### Explanation
 - Put your .pcd file in "static/data/" directory.
 - Recommend running web browser private mode.(because cache data)
-- You can set your screen through `camera.position(x,y,z)` and `controls.target.set()` in [viewer.js]()
+- You can set your screen through `camera.position(x,y,z)` and `controls.target.set()` in [viewer.js](https://github.com/yoonje/binary-pcd-web-viewer/blob/master/static/js/viewer.js)
 
 ### Run
 `url : https://<IP:port_number>/?load=/static/data/<file_name>.pcd`
