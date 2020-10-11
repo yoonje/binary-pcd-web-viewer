@@ -9,7 +9,7 @@
 ### Run
 `url : https://<IP:port_number>/?load=/static/data/<file_name>.pcd`
 
-### Result
+### Output
 <img width="2100" alt="kcity" src="https://user-images.githubusercontent.com/38535571/92152587-e46ded00-ee5d-11ea-8646-fa594696fad8.png">
 This image show Kcity(South Korea Autonomous Vehicle Experiment City) pcd map.<br><br>
 
